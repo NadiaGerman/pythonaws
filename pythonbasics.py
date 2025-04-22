@@ -219,18 +219,38 @@
 # else:
 #     print(" Password is valid!")
 
-# Task 19: Even or Odd Counter
+# # Task 19: Even or Odd Counter
 
-num = int(input("Enter a number: "))
+# num = int(input("Enter a number: "))
 
-even_count = 0
-odd_count = 0
+# even_count = 0
+# odd_count = 0
 
-for i in range(1, num + 1):
-    if i % 2 == 0:
-        even_count += 1
-    else:
-        odd_count += 1
+# for i in range(1, num + 1):
+#     if i % 2 == 0:
+#         even_count += 1
+#     else:
+#         odd_count += 1
 
-print("Even numbers:", even_count)
-print("Odd numbers:", odd_count)
+# print("Even numbers:", even_count)
+# print("Odd numbers:", odd_count)
+
+# Task 20: Password Strength Checker
+
+password = input("Enter password: ")
+
+errors = []
+
+if len(password) < 6:
+    errors.append("Too short")
+if not any(char.isdigit() for char in password):
+    errors.append("Must include at least one number")
+if not any(char.isupper() for char in password):
+    errors.append("Must include at least one uppercase letter")
+
+if not errors:
+    print("Strong password")
+else:
+    for error in errors:
+        print(error)
+
