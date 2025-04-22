@@ -282,3 +282,22 @@
 #         print(f"{num} is a prime number")
 #     else:
 #         print(f"{num} is not a prime number")
+
+
+# Task 23: Student grades dictionary
+
+students = {
+    "Alice": 90,
+    "Bob": 78,
+    "Charlie": 85,
+    "Diana": 86
+}
+
+# Calculate average
+average = sum(students.values()) / len(students)
+print(f"Average grade: {average}")
+
+# Find top student(s)
+highest = max(students.values())
+top_students = [name for name, grade in students.items() if grade == highest]
+print("Top student(s):", ", ".join(top_students))
