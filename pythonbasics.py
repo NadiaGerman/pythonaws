@@ -370,25 +370,39 @@
 #     print("It's not a palindrome.")
 
 
-# Exercise 28: Count Vowels in a String
+# # Exercise 28: Count Vowels in a String
 
-# Ask the user to enter a sentence
-sentence = input("Enter a sentence: ").lower()
+# # Ask the user to enter a sentence
+# sentence = input("Enter a sentence: ").lower()
 
-# Dictionary to store counts of each vowel
-vowel_counts = {
-    'a': 0,
-    'e': 0,
-    'i': 0,
-    'o': 0,
-    'u': 0
-}
+# # Dictionary to store counts of each vowel
+# vowel_counts = {
+#     'a': 0,
+#     'e': 0,
+#     'i': 0,
+#     'o': 0,
+#     'u': 0
+# }
 
-# Count vowels in the sentence
-for char in sentence:
-    if char in vowel_counts:
-        vowel_counts[char] += 1
+# # Count vowels in the sentence
+# for char in sentence:
+#     if char in vowel_counts:
+#         vowel_counts[char] += 1
 
-# Print the results
-for vowel, count in vowel_counts.items():
-    print(f"{vowel}: {count}")
+# # Print the results
+# for vowel, count in vowel_counts.items():
+#     print(f"{vowel}: {count}")
+
+# # Exercise 29: Check if input is a palindrome
+
+# # Ask the user for a word or sentence
+# text = input("Enter a word or sentence: ")
+
+# # Remove spaces and convert to lowercase
+# cleaned = text.replace(" ", "").lower()
+
+# # Check if it's a palindrome
+# if cleaned == cleaned[::-1]:
+#     print("Yes, it's a palindrome!")
+# else:
+#     print("No, it's not a palindrome.")
