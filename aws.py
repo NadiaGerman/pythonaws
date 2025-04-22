@@ -44,15 +44,16 @@
 
 # Task 4: Bank Robbery Recruitment
 
-age = int(input("Enter your age: "))
-height = int(input("Enter your height in cm: "))
-profession = input("Enter your profession: ").strip().lower()
+# age = int(input("Enter your age: "))
+# height = int(input("Enter your height in cm: "))
+# profession = input("Enter your profession: ").strip().lower()
 
-if profession == "cop":
-    print("Sorry, we don't work with cops.")
-elif age < 18:
-    print(" You're too young for this... 'adventure'.")
-elif height < 100:
-    print("You must be at least 100 cm tall to join the team.")
-else:
-    print("Welcome to the crew! Get ready for the heist!")
+# if profession == "cop":
+#     print("Sorry, we don't work with cops.")
+# elif age < 18:
+#     print(" You're too young for this... 'adventure'.")
+# elif height < 100:
+#     print("You must be at least 100 cm tall to join the team.")
+# else:
+#     print("Welcome to the crew! Get ready for the heist!")
+
