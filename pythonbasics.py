@@ -235,22 +235,22 @@
 # print("Even numbers:", even_count)
 # print("Odd numbers:", odd_count)
 
-# Task 20: Password Strength Checker
+# # Task 20: Password Strength Checker
 
-password = input("Enter password: ")
+# password = input("Enter password: ")
 
-errors = []
+# errors = []
 
-if len(password) < 6:
-    errors.append("Too short")
-if not any(char.isdigit() for char in password):
-    errors.append("Must include at least one number")
-if not any(char.isupper() for char in password):
-    errors.append("Must include at least one uppercase letter")
+# if len(password) < 6:
+#     errors.append("Too short")
+# if not any(char.isdigit() for char in password):
+#     errors.append("Must include at least one number")
+# if not any(char.isupper() for char in password):
+#     errors.append("Must include at least one uppercase letter")
 
-if not errors:
-    print("Strong password")
-else:
-    for error in errors:
-        print(error)
+# if not errors:
+#     print("Strong password")
+# else:
+#     for error in errors:
+#         print(error)
 
