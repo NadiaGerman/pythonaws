@@ -408,22 +408,35 @@
 #     print("No, it's not a palindrome.")
 
 
-# Exercise 32: Prime Number Checker
+# # Exercise 32: Prime Number Checker
 
-num = int(input("Enter a number: "))
+# num = int(input("Enter a number: "))
 
-if num <= 1:
-    print("Not a prime number.")
-else:
-    is_prime = True
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            is_prime = False
-            break
+# if num <= 1:
+#     print("Not a prime number.")
+# else:
+#     is_prime = True
+#     for i in range(2, int(num ** 0.5) + 1):
+#         if num % i == 0:
+#             is_prime = False
+#             break
 
-    if is_prime:
-        print(f"{num} is a prime number.")
-    else:
-        print(f"{num} is not a prime number.")
+#     if is_prime:
+#         print(f"{num} is a prime number.")
+#     else:
+#         print(f"{num} is not a prime number.")# Exercise 33: Password Strength Checker
+
+# # Exercise 33: Password Strength Checker
+
+# password = input("Enter your password: ")
+
+# has_upper = any(char.isupper() for char in password)
+# has_lower = any(char.islower() for char in password)
+# has_digit = any(char.isdigit() for char in password)
+
+# if len(password) >= 8 and has_upper and has_lower and has_digit:
+#     print("Password is strong")
+# else:
+#     print("Password is weak")
 
 
