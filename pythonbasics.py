@@ -254,3 +254,31 @@
 #     for error in errors:
 #         print(error)
 
+# # Task 21: FizzBuzz
+
+# for i in range(1, 51):
+#     if i % 3 == 0 and i % 5 == 0:
+#         print("FizzBuzz")
+#     elif i % 3 == 0:
+#         print("Fizz")
+#     elif i % 5 == 0:
+#         print("Buzz")
+#     else:
+#         print(i)
+
+# # Task 22: Prime number checker
+
+# def is_prime(n):
+#     if n <= 1:
+#         return False
+#     for i in range(2, int(n**0.5)+1):
+#         if n % i == 0:
+#             return False
+#     return True
+
+# # Check numbers from 1 to 20
+# for num in range(1, 21):
+#     if is_prime(num):
+#         print(f"{num} is a prime number")
+#     else:
+#         print(f"{num} is not a prime number")
