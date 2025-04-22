@@ -19,3 +19,15 @@ age = current_year - birth_year
 
 # Display the result
 print(f"You are {age} years old.")
+
+
+# Task 4: Even or Odd Checker
+
+# Ask the user to input a number
+number = int(input("Enter a number: "))
+
+# Check if the number is even or odd using modulo operator
+if number % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
