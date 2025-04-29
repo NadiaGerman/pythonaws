@@ -70,7 +70,7 @@ class TicTacToe:
                 if self.make_move(position):
                     if self.check_winner():
                         self.display_board()
-                        print(f"🎉 {self.current_player} wins! 🎉")
+                        print(f" {self.current_player} wins! ")
                         game_running = False
                     elif self.check_draw():
                         self.display_board()
@@ -79,9 +79,9 @@ class TicTacToe:
                     else:
                         self.switch_player()
                 else:
-                    print("❌ Invalid move. Position already taken or out of range.")
+                    print(" Invalid move. Position already taken or out of range.")
             except ValueError:
-                print("⚠️ Invalid input. Please enter a number between 1 and 9.")
+                print(" Invalid input. Please enter a number between 1 and 9.")
 
         if input("Play again? (y/n): ").strip().lower() == 'y':
             self.reset_board()
@@ -91,7 +91,7 @@ class TicTacToe:
 def main_menu():
     while True:
         print("=" * 50)
-        print("🕹️  Welcome to Tic Tac Toe!".center(50))
+        print("  Welcome to Tic Tac Toe!".center(50))
         print("=" * 50)
         print("1. Start New Game")
         print("2. Quit")
@@ -101,10 +101,10 @@ def main_menu():
             game = TicTacToe()
             game.play_game()
         elif choice == '2':
-            print("👋 Thanks for playing! Goodbye.")
+            print(" Thanks for playing! Goodbye.")
             break
         else:
-            print("⚠️ Invalid choice. Please enter 1 or 2.")
+            print(" Invalid choice. Please enter 1 or 2.")
 
 
 if __name__ == "__main__":
