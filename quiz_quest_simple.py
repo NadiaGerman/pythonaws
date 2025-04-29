@@ -1,8 +1,8 @@
-# quiz_quest.py
+# Simple Version of Quiz Quest - Manual Text Answers, Full Category Names Only
 
 import random
 
-# Question bank (single-answer system)
+# Question bank
 questions = {
     "science": [
         {"q": "What planet is known as the Red Planet?", "a": "Mars"},
@@ -32,61 +32,43 @@ players = []
 scores = {}
 rounds = 3
 
-# -----------------------------------------------
-# 🟡 Version 1 — Very simple version (one correct answer, string match)
-# def ask_question(player, category):
-#     question = random.choice(questions[category])
-#     print(f"\n{player}, your question is:")
-#     print(question["q"])
-#     answer = input("Your answer: ")
-#     if answer.strip().lower() == question["a"].lower():
-#         print("Correct!")
-#         scores[player] += 1
-#     else:
-#         print(f"Wrong. The correct answer was: {question['a']}.")
-# -----------------------------------------------
-
-# -----------------------------------------------
-# 🟢 Version 2 — Improved version (accepts multiple possible answers)
-# Use this version in main() by calling: ask_question(player, category)
-def ask_question(player, category):
+# Simple version question function
+def ask_question_simple(player, category):
+    """
+    Simple version using text-based answer input.
+    Player types the answer manually.
+    """
     question = random.choice(questions[category])
     print(f"\n{player}, your question is:")
     print(question["q"])
     answer = input("Your answer: ").strip().lower()
-    
-    # Handle both string or list of correct answers
-    correct_answers = question["a"]
-    if isinstance(correct_answers, str):
-        correct_answers = [correct_answers.lower()]
-    else:
-        correct_answers = [ans.lower() for ans in correct_answers]
-
-    if answer in correct_answers:
+    if answer == question["a"].lower():
         print("Correct!")
         scores[player] += 1
     else:
-        print(f"Wrong. Acceptable answers were: {', '.join(correct_answers)}.")
-# -----------------------------------------------
+        print(f"Wrong. The correct answer was: {question['a']}.")
 
-# Function to show scores
 def show_scores():
     print("\n--- Current Scores ---")
     for player, score in scores.items():
         print(f"{player}: {score} points")
 
-# Function to declare the winner
 def declare_winner():
     print("\n=== Final Leaderboard ===")
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
     for player, score in sorted_scores:
         print(f"{player}: {score} points")
-    winner = sorted_scores[0][0]
-    print(f"\n🏆 Congratulations {winner}! You are the winner! 🏆")
 
-# Main game loop
+    highest_score = sorted_scores[0][1]
+    winners = [player for player, score in sorted_scores if score == highest_score]
+
+    if len(winners) > 1:
+        print(f"\n It's a tie! Congratulations to: {', '.join(winners)}!")
+    else:
+        print(f"\n Congratulations {winners[0]}! You are the winner! ")
+
 def main():
-    print("🎉 Welcome to Quiz Quest! 🎉")
+    print(" Welcome to Quiz Quest! (Simple Version) ")
     print("Please enter the names of players. Type 'done' when finished:")
 
     # Register players
@@ -105,43 +87,24 @@ def main():
     print("\n--- Let's Start the Game! ---")
     print(f"Players: {', '.join(players)}")
 
-    # Mapping categories
-    category_map = {
-        "1": "science",
-        "s": "science",
-        "science": "science",
-        "2": "history",
-        "h": "history",
-        "history": "history",
-        "3": "pop culture",
-        "p": "pop culture",
-        "pop culture": "pop culture"
-    }
+    # Available categories
+    categories = ["science", "history", "pop culture"]
 
     # Play rounds
     for round_num in range(1, rounds + 1):
         print(f"\n=== Round {round_num} ===")
         for player in players:
             print(f"\n{player}'s turn!")
-            print("Choose a category:")
-            print("1. Science")
-            print("2. History")
-            print("3. Pop Culture")
-            choice = input("Enter category number, letter (s/h/p), or name: ").strip().lower()
-            category = category_map.get(choice)
-
-            if category:
-                # 👉 Active version being used (change this line to test old version)
-                ask_question(player, category)
-                # To use the original version for testing:
-                # ask_question_original(player, category)
+            print("Available categories: science, history, pop culture")
+            choice = input("Enter full category name: ").strip().lower()
+            if choice in categories:
+                ask_question_simple(player, choice)
             else:
-                print("Invalid choice. Skipping turn.")
+                print("Invalid category. Skipping turn.")
 
         show_scores()
 
     declare_winner()
 
-# Always good practice in Python
 if __name__ == "__main__":
     main()
